@@ -6,9 +6,9 @@ function fib(n) {
 }
 
 function timed(func) {
-  return function(args) {
+  return function(...args) {
     const s0 = Date.now();
-    console.log(func(args));
+    console.log(func(...args));
     const s1 = Date.now();
     console.log(`Took ${s1 - s0}ms`);
   };

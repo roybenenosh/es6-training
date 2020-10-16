@@ -6,10 +6,11 @@ class Car {
 }
 
 class Race {
-  constructor(car1, car2) {
-    this.car1 = car1;
-    this.car2 = car2;
-    this.winner = car1.score > car2.score ? car1 : car2;
+  constructor(...cars) {
+    this.cars = cars;
+    this.winner = this.cars.sort((c1, c2) => {
+      return c1.score < c2.score;
+    })[0];
   }
 
   getWinner() {
@@ -17,7 +18,10 @@ class Race {
   }
 
   add(car) {
-    // some logic here
+    this.cars.push(car);
+    this.winner = this.cars.sort((c1, c2) => {
+      return c1.score - c2.score;
+    })[0];
   }
 }
 
