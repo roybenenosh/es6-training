@@ -7,8 +7,7 @@ function printTimes(options) {
 }
 
 function printTimesFromWeirdDevelopersDownstairs(weirdOptions) {
-  const { title, times } = weirdOptions;
-  const text = title;
+  const { title: text, times } = weirdOptions;
   printTimes({ text, times });
 }
 
